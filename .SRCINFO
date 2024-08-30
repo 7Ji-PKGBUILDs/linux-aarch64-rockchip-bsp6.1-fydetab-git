@@ -1,0 +1,32 @@
+pkgbase = linux-aarch64-rockchip-bsp6.1-fydetab-git
+	pkgver = 6.1.75.r1272327.g7348ed5d
+	pkgrel = 1
+	url = https://github.com/Linux-for-Fydetab-Duo
+	arch = aarch64
+	license = GPL2
+	makedepends = cpio
+	makedepends = xmlto
+	makedepends = docbook-xsl
+	makedepends = kmod
+	makedepends = inetutils
+	makedepends = bc
+	makedepends = git
+	makedepends = dtc
+	options = !strip
+	source = git+https://github.com/Linux-for-Fydetab-Duo/linux-rockchip.git#branch=noble
+	source = localversion.config
+	source = panthor.patch::https://github.com/hbiyik/linux/compare/aa54fa4e0712616d44f2c2f312ecc35c0827833d...rk-6.1-rkr3-panthor.patch
+	sha512sums = SKIP
+	sha512sums = 9ec050e491788b8428395fc28b6d8486d64d314d8b85e97d8df30a35bd7b85d2ed84682e7b2eaed7b471b73aa51119e360761a099719eed9952713e0caba17ce
+	sha512sums = 9a693c739e90662d2f86c89874638ebba3d75e06c787151f6290d759df92589f4d500c6fe17533c06d2f3437518afaec6488c1c70fb813c7b0b5db9d9d320e20
+
+pkgname = linux-aarch64-rockchip-bsp6.1-fydetab-git
+	pkgdesc = The linux-rockchip kernel, for Fydetab Duo
+	depends = coreutils
+	depends = kmod
+	depends = initramfs
+	optdepends = wireless-regdb: to set the correct wireless channels of your country
+
+pkgname = linux-aarch64-rockchip-bsp6.1-fydetab-git-headers
+	pkgdesc = Headers and scripts for building modules for the linux-rockchip kernel, for Fydetab Duo
+	depends = python
