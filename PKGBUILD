@@ -17,13 +17,13 @@ options=('!strip')
 _srcname='linux-rockchip'
 source=(
   "git+${url}/${_srcname}.git#branch=noble"
-  'localversion.config'
+  'custom_reconfig'
   "panthor.patch::https://github.com/hbiyik/linux/compare/${_panthor_base}...${_panthor_branch}.patch"
 )
 
 sha512sums=(
   'SKIP'
-  '9ec050e491788b8428395fc28b6d8486d64d314d8b85e97d8df30a35bd7b85d2ed84682e7b2eaed7b471b73aa51119e360761a099719eed9952713e0caba17ce'
+  '3caca35bebfb78205cfcf6980b2ce78b72e86d602901a21a56aa60efe21b26f7c772f5736062b132d3f38b0e57158a8e598094b28669ef04651e0913771f12ab'
   '9a693c739e90662d2f86c89874638ebba3d75e06c787151f6290d759df92589f4d500c6fe17533c06d2f3437518afaec6488c1c70fb813c7b0b5db9d9d320e20'
 )
 
@@ -56,7 +56,7 @@ prepare() {
   patch -p1 -N -i ../panthor.patch
 
   echo "Preparing config..."
-  scripts/kconfig/merge_config.sh -m debian.rockchip/config/config.common.ubuntu ../localversion.config
+  scripts/kconfig/merge_config.sh -m debian.rockchip/config/config.common.ubuntu ../custom_reconfig
 }
 
 build() {
