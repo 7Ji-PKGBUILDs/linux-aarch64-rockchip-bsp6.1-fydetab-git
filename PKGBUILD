@@ -3,7 +3,7 @@
 # Contributor: Jat-faan Wong, Guoxin "7Ji" Pu, Joshua-Riek 
 
 _panthor_base=aa54fa4e0712616d44f2c2f312ecc35c0827833d
-_panthor_branch=rk-6.1-rkr3-panthor
+_panthor_branch=linux-6.1-stan-rkr3-panthor
 pkgbase=linux-aarch64-rockchip-bsp6.1-fydetab-git
 pkgname=("${pkgbase}"{,-headers})
 pkgver=6.1.75.r1272327.g7348ed5d
@@ -24,7 +24,7 @@ source=(
 sha512sums=(
   'SKIP'
   '3caca35bebfb78205cfcf6980b2ce78b72e86d602901a21a56aa60efe21b26f7c772f5736062b132d3f38b0e57158a8e598094b28669ef04651e0913771f12ab'
-  '9a693c739e90662d2f86c89874638ebba3d75e06c787151f6290d759df92589f4d500c6fe17533c06d2f3437518afaec6488c1c70fb813c7b0b5db9d9d320e20'
+  '89161d6da2a5487b3ce520125fd4cd3c03b674c390bab3884fd824caf8cc36186074b696c1295ca3c0f6d14e57bf829a450f1c9faac207788832bfb32872424b'
 )
 
 pkgver() {
