@@ -19,12 +19,14 @@ source=(
   "git+${url}/${_srcname}.git#branch=noble"
   'custom_reconfig'
   "panthor.patch::https://github.com/hbiyik/linux/compare/${_panthor_base}...${_panthor_branch}.patch"
+  "gpu_pll_tune.patch::https://github.com/hbiyik/linux/commit/e4fd428dd34fe13cbd5fa6ed79e2f787bc7655b0.patch"
 )
 
 sha512sums=(
   'SKIP'
   '59ed71981bf0e180f40c55925fe91692e96ab47aff9d67a230097382244d63961e8ddddeecb97bfeed9918bcf3616adcda1c9bcc2f0d29b3cab94337b7d2249d'
   '89161d6da2a5487b3ce520125fd4cd3c03b674c390bab3884fd824caf8cc36186074b696c1295ca3c0f6d14e57bf829a450f1c9faac207788832bfb32872424b'
+  'SKIP'
 )
 
 pkgver() {
@@ -46,14 +48,10 @@ prepare() {
   echo "-rockchip" > localversion.10-pkgname
   #echo "-r$(git rev-list --count HEAD)" > localversion.20-revision
 
-  # this is only for local builds so there is no need to integrity check. (if needed)
-  for p in ../../custom/*.patch; do
-    echo "Custom Patching with ${p}"
-    patch -p1 -N -i $p || true
+  for p in $srcdir/*.patch; do
+    echo "Patching with ${p}"
+    patch -p1 -N -i $p
   done
-
-  # based on https://github.com/hbiyik/linux-rockchip/tree/noble-panthor
-  patch -p1 -N -i ../panthor.patch
 
   echo "Preparing config..."
   scripts/kconfig/merge_config.sh -m debian.rockchip/config/config.common.ubuntu ../custom_reconfig
