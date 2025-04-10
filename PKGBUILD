@@ -7,7 +7,7 @@ _panthor_branch=linux-6.1-stan-rkr3-panthor
 pkgbase=linux-aarch64-rockchip-bsp6.1-fydetab-git
 pkgname=("${pkgbase}"{,-headers})
 pkgver=6.1.75.r1272327.g7348ed5d
-pkgrel=2
+pkgrel=3
 arch=('aarch64')
 license=('GPL2')
 url="https://github.com/Linux-for-Fydetab-Duo"
@@ -23,7 +23,7 @@ source=(
 
 sha512sums=(
   'SKIP'
-  '3caca35bebfb78205cfcf6980b2ce78b72e86d602901a21a56aa60efe21b26f7c772f5736062b132d3f38b0e57158a8e598094b28669ef04651e0913771f12ab'
+  '59ed71981bf0e180f40c55925fe91692e96ab47aff9d67a230097382244d63961e8ddddeecb97bfeed9918bcf3616adcda1c9bcc2f0d29b3cab94337b7d2249d'
   '89161d6da2a5487b3ce520125fd4cd3c03b674c390bab3884fd824caf8cc36186074b696c1295ca3c0f6d14e57bf829a450f1c9faac207788832bfb32872424b'
 )
 
